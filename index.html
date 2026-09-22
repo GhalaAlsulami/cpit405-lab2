@@ -3,115 +3,319 @@
 <head>
     <meta charset="utf-8">
     <title>CPIT-405 lab 2</title>
+    <style>
+        :root {
+            --paper: #f7f5ef;
+            --ink: #22261f;
+            --ink-soft: #565b4f;
+            --rule: #d9d4c4;
+            --accent: #2f6f4f;
+            --accent-soft: #e4ede4;
+            --amber: #b1701f;
+        }
+ 
+        * { box-sizing: border-box; }
+ 
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+        }
+ 
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 96px;
+        }
+ 
+        h1.masthead {
+            font-family: ui-monospace, "SF Mono", Consolas, monospace;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 4px;
+        }
+ 
+        .masthead-sub {
+            font-family: ui-monospace, "SF Mono", Consolas, monospace;
+            font-size: 0.85rem;
+            color: var(--ink-soft);
+            margin: 0 0 40px;
+        }
+ 
+        .masthead-sub a {
+            color: var(--accent);
+        }
+ 
+        section.step {
+            border-left: 2px solid var(--rule);
+            padding-left: 24px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+ 
+        section.step::before {
+            content: attr(data-n);
+            position: absolute;
+            left: -13px;
+            top: 0;
+            background: var(--paper);
+            border: 2px solid var(--rule);
+            color: var(--ink-soft);
+            font-family: ui-monospace, "SF Mono", Consolas, monospace;
+            font-size: 0.7rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+ 
+        section.step h2 {
+            font-size: 1.05rem;
+            margin: 0 0 12px;
+        }
+ 
+        section.step h3 {
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+            margin: 20px 0 8px;
+        }
+ 
+        p { margin: 0 0 14px; }
+ 
+        hr {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin: 20px 0;
+        }
+ 
+        a { color: var(--accent); }
+ 
+        strong { color: var(--amber); }
+        em { color: var(--accent); }
+ 
+        span.tag {
+            background: var(--accent-soft);
+            padding: 1px 6px;
+            border-radius: 3px;
+        }
+ 
+        .thumb {
+            display: inline-block;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--rule);
+        }
+ 
+        .thumb img {
+            display: block;
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+        }
+ 
+        ol, ul {
+            margin: 0 0 14px;
+            padding-left: 22px;
+        }
+ 
+        li { margin-bottom: 4px; }
+ 
+        dl { margin: 0; }
+        dt {
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        dd {
+            margin: 2px 0 0;
+            color: var(--ink-soft);
+        }
+ 
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+ 
+        th, td {
+            border: 1px solid var(--rule);
+            padding: 8px 12px;
+            text-align: left;
+        }
+ 
+        th {
+            background: var(--accent-soft);
+            color: var(--ink);
+        }
+ 
+        form {
+            background: #fff;
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            padding: 20px;
+            max-width: 320px;
+        }
+ 
+        form label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--ink-soft);
+            margin-bottom: 4px;
+        }
+ 
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+        }
+ 
+        form input[type="submit"] {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 9px 18px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+ 
+        blockquote {
+            margin: 0;
+            padding-left: 16px;
+            border-left: 3px solid var(--amber);
+            color: var(--ink-soft);
+            font-style: italic;
+        }
+    </style>
 </head>
  
 <body>
+<div class="page">
  
-    <h1>Lab 2: HTML</h1>
+    <h1 class="masthead">Lab 2: HTML</h1>
+    <p class="masthead-sub">CPIT-405 &middot; Internet Applications &middot; <a href="https://cpit405.gitlab.io">cpit405.gitlab.io</a></p>
  
     <!-- Checkpoint 2: Link, paragraphs, clickable image -->
-    <a href="https://cpit405.gitlab.io">Visit CPIT-405 Website</a>
+    <section class="step" data-n="1">
+        <h2>Getting started</h2>
+        <p>I am learning HTML in CPIT 405.</p>
+        <hr>
+        <p>This lab is teaching me how to structure a webpage using headings, lists, tables, and forms.</p>
  
-    <p>I am learning HTML in CPIT 405.</p>
-    <hr>
-    <p>This lab is teaching me how to structure a webpage using headings, lists, tables, and forms.</p>
- 
-    <a href="https://cpit405.gitlab.io">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXvAfNtbq2WOrZGFUCbW4NeQU3_bJxchleyPIUs-N1yg&s=10" alt="Placeholder collage logo">
-    </a>
+        <a href="https://cpit405.gitlab.io" class="thumb">
+            <img src="https://placehold.co/140x140" alt="Placeholder course logo">
+        </a>
+    </section>
  
     <!-- Checkpoint 3: Text formatting -->
-    <p>This word is <strong>important</strong>.</p>
-    <p>This word is <em>emphasized</em>.</p>
-    <p>Einstein's famous formula is E = mc<sup>2</sup>.</p>
-    <p>Water is written as H<sub>2</sub>O.</p>
-    <p>This is a <span style="color: purple;">styled span</span> of text.</p>
+    <section class="step" data-n="2">
+        <h2>Text formatting</h2>
+        <p>This word is <strong>important</strong>.</p>
+        <p>This word is <em>emphasized</em>.</p>
+        <p>Einstein's famous formula is E = mc<sup>2</sup>.</p>
+        <p>Water is written as H<sub>2</sub>O.</p>
+        <p>This is a <span class="tag">styled span</span> of text.</p>
+    </section>
  
     <!-- Checkpoint 4: Heading hierarchy -->
-    <h1>Heading elements</h1>
+    <section class="step" data-n="3">
+        <h2>Heading elements</h2>
  
-    <h2>Summary</h2>
-    <p>Some text here...</p>
+        <h3>Summary</h3>
+        <p>Some text here...</p>
  
-    <h2>Examples</h2>
+        <h3>Examples</h3>
+        <p><strong>Example 1</strong> &mdash; Some text here...</p>
+        <p><strong>Example 2</strong> &mdash; Some text here...</p>
  
-    <h3>Example 1</h3>
-    <p>Some text here...</p>
- 
-    <h3>Example 2</h3>
-    <p>Some text here...</p>
- 
-    <h2>See also</h2>
-    <p>Some text here...</p>
+        <h3>See also</h3>
+        <p>Some text here...</p>
+    </section>
  
     <!-- Checkpoint 5: Lists -->
-    <h2>My Favorite Technologies</h2>
-    <ol>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ol>
+    <section class="step" data-n="4">
+        <h2>Lists</h2>
  
-    <h2>Technologies I Want to Learn</h2>
-    <ul>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>Python</li>
-    </ul>
+        <h3>My Favorite Technologies</h3>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
  
-    <h2>Definitions</h2>
-    <dl>
-        <dt>HTML</dt>
-        <dd>Language used to structure web pages.</dd>
+        <h3>Technologies I Want to Learn</h3>
+        <ul>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Python</li>
+        </ul>
  
-        <dt>CSS</dt>
-        <dd>Language used to style web pages.</dd>
-    </dl>
+        <h3>Definitions</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Language used to structure web pages.</dd>
+ 
+            <dt>CSS</dt>
+            <dd>Language used to style web pages.</dd>
+        </dl>
+    </section>
  
     <!-- Checkpoint 6: Table -->
-    <h2>Web Technologies Table</h2>
-    <table border="1">
-        <tr>
-            <th>Basics</th>
-            <th>Front-end Frameworks</th>
-            <th>Server-side Frameworks</th>
-        </tr>
-        <tr>
-            <td>HTML</td>
-            <td>React</td>
-            <td>Spring</td>
-        </tr>
-        <tr>
-            <td>CSS</td>
-            <td>Angular</td>
-            <td>Django</td>
-        </tr>
-        <tr>
-            <td>JS</td>
-            <td>Vue</td>
-            <td>Laravel</td>
-        </tr>
-    </table>
+    <section class="step" data-n="5">
+        <h2>Web technologies table</h2>
+        <table>
+            <tr>
+                <th>Basics</th>
+                <th>Front-end Frameworks</th>
+                <th>Server-side Frameworks</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>React</td>
+                <td>Spring</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Angular</td>
+                <td>Django</td>
+            </tr>
+            <tr>
+                <td>JS</td>
+                <td>Vue</td>
+                <td>Laravel</td>
+            </tr>
+        </table>
+    </section>
  
     <!-- Checkpoint 7: Login form -->
-    <h2>Login Form</h2>
-    <form>
-        <label>Username:</label>
-        <input type="text">
+    <section class="step" data-n="6">
+        <h2>Login form</h2>
+        <form>
+            <label>Username</label>
+            <input type="text">
  
-        <br><br>
+            <label>Password</label>
+            <input type="password">
  
-        <label>Password:</label>
-        <input type="password">
+            <input type="submit" value="Login">
+        </form>
+    </section>
  
-        <br><br>
+    <!-- Mini Challenge -->
+    <section class="step" data-n="7">
+        <h2>Mini challenge</h2>
+        <blockquote>Learning HTML is the first step to becoming a web developer.</blockquote>
+    </section>
  
-        <input type="submit" value="Login">
-    </form>
- 
-    <!-- Mini Challenge: extra tag not required in the lab -->
-    <h2>Mini Challenge</h2>
-    <blockquote>Learning HTML is the first step to becoming a web developer.</blockquote>
- 
+</div>
 </body>
 </html>
